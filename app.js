@@ -135,7 +135,7 @@ app.post("/submit", function(req, res) {
   });
 });
 
-app.get("/logout", function(req, res, next) {
+app.post("/logout", function(req, res, next) {
   req.logout(function(err) {
     if (err) { return next(err); }
     res.redirect("/");
@@ -177,9 +177,10 @@ app.post("/login", function(req, res) {
 });
 
 
-
-
-
+let port = process.env.PORT;
+  if (port == null || port == "") {
+    port = 3000;
+  }
 
 
 app.listen(3000, () => {
