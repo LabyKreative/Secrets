@@ -27,8 +27,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
-mongoose.set("useCreateIndex", true);
+mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true, useUnifiedTopology: true
+}, err => {
+  if (err) throw err;
+    console.log("connected to MongoDB!!!")
+});
 
 const userSchema = new mongoose.Schema({
   email: String,
@@ -132,9 +135,13 @@ app.post("/submit", function(req, res) {
   });
 });
 
-app.get("/logout", function(req, res) {
-  req.logout();
-  res.redirect("/");
+app.get("/logout", function(req, res, next) {
+  req.logout(function(err) {
+    if (err) { 
+      return next(err); 
+      }
+    res.redirect("/");
+  });
 });
 
 app.post("/register", function(req, res) {
