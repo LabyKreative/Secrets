@@ -14,6 +14,6 @@ then install node modules:
 npm install
 ```
 
-You also need to get some google developer oauth i.e. client id and secrete key for user authentication to run the app
+You also need to get some google developer oauth i.e. client id and secrete key for user authentication to run the app. And register with Mongodb to use their databse in place as used in the project
 
 ## Cheers! 🥳 & Happy coding! 🤗

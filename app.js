@@ -31,7 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect(
-  "mongodb+srv://userDB:FXabCpF9lHvM8NLi@secrets.pmptndj.mongodb.net/?retryWrites=true&w=majority",
+  process.env.MONGODB_CLUSTER,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) throw err;
