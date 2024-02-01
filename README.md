@@ -1,4 +1,4 @@
-# Mini Secrets 🤭
+# Some stuffs are better kept - Mini Secrets 🤭
 
 Secrete is a mini app for keeping personal secrets 🤐
 
